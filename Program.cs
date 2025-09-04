@@ -1,16 +1,31 @@
 ﻿// See https://aka.ms/new-console-template for more information
 Console.WriteLine("Hello, World!");
 
-int age = 25, health = 100, power = 5;
+int age = 35;
+double age2 = 25.5;
+float position = 35.5f;
+Console.WriteLine("Number" + 5 + 6);
+Console.WriteLine(5 + 6 + "Number");
 
-Console.WriteLine(age);
+string name = "Alejandro";
 
-age = 27;
+Console.WriteLine("My name is " + name + " and I'm " + age + " years old.");
+Console.WriteLine($"My name is {name} and I'm {age} years old.");
 
-age++;
+char character = 'a';
+Console.WriteLine("My name is \"Alejandro Foucault\"");
 
-age += 1;
+bool isPlayer = true;
+bool isEnemy = false;
 
-age = age + 1;
+var myVariable = 10.2;
 
-Console.WriteLine(age);
+//long ageUniverse = 15;
+//int ageUniverseInt = ageUniverse;
+
+int ageUniverseInt = 15;
+long ageUniverse = ageUniverseInt;
+
+int health = Convert.ToInt32("56");
+int healthMax = 10;
+Console.WriteLine((float)health / healthMax);
