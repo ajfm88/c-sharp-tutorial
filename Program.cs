@@ -1,11 +1,18 @@
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
+﻿Console.WriteLine("Hello, World!");
 
-int age = 35;
-if (age < 20) {
-    Console.WriteLine("Age under 20!");
-} else if (age < 30) {
-    Console.WriteLine("Age above 20 and under 30!");
-} else {
-    Console.WriteLine("Age above 30")
+string name = "Code Monkey";
+
+switch (name) {
+    default:
+        Console.WriteLine("Unknown name!");
+        break;
+    case "Code Monkey":
+        Console.WriteLine("Hello, Code Monkey!");
+        break;
+    case "Iron Man":
+        Console.WriteLine("Hello, Iron Man!");
+        break;
+    case "Black Widow":
+        Console.WriteLine("Hello, Black Widow!");
+        break;
 }
