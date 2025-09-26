@@ -1,18 +1,17 @@
-﻿Console.WriteLine("Hello, World!");
+﻿namespace c_sharp_tutorial
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Hello, World!");
+            SayHello("Alejandro", 23);
+                                    
+        }
 
-string name = "Code Monkey";
-
-switch (name) {
-    default:
-        Console.WriteLine("Unknown name!");
-        break;
-    case "Code Monkey":
-        Console.WriteLine("Hello, Code Monkey!");
-        break;
-    case "Iron Man":
-        Console.WriteLine("Hello, Iron Man!");
-        break;
-    case "Black Widow":
-        Console.WriteLine("Hello, Black Widow!");
-        break;
+        static void SayHello (string playerName, int age)
+        {
+            Console.WriteLine($"Hello {playerName}, you are {age} years old!");
+        }
+    }
 }
