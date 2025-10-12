@@ -4,22 +4,45 @@
     {
         static void Main(string[] args)
         {
-            int[] numbersArray = new int[] { 56, 123, 12 };
-            int[] numbersArray2 = new int[5];
-            int[] numbersArray3 = new int[7] { 13, 43, 78, 29, 56, 123, 12 };
-            Console.WriteLine(numbersArray.Length);
-            Console.WriteLine(numbersArray[0]);
-            Console.WriteLine(System.Array.IndexOf(numbersArray, 123));
+            // While loops
+            int i = 0;
+            while (i < 3)
+            {
+                Console.WriteLine("Loop " + i);
+                i++;
+            }
 
-            List<int> numbersList = new List<int>();
-            numbersList.Add(12);
-            numbersList.Add(0);
-            numbersList.Add(89);
-            Console.WriteLine(numbersList.Count);
-            Console.WriteLine(numbersList[0]);
-            Console.WriteLine(numbersList.Contains(89));
-            Console.WriteLine(numbersList.Contains(37));
-            Console.WriteLine(numbersList.IndexOf(37));
+            // Do while loops
+            i = 0;
+            do
+            {
+                Console.WriteLine("Do While Loop " + i);
+                i++;
+            } while (i < 3);
+
+            //  For loops
+            for (int j = 0; j < 3; j++)
+            {
+                Console.WriteLine("For Loop " + j);
+            }
+
+            string[] nameArray = new string[]
+            {
+                "Alejandro Foucault",
+                "Cristiano Ronaldo",
+                "Lionel Messi",
+                "Roberto Carlos"
+            };
+            for (int k = 0; k < nameArray.Length; k++)
+            {
+                Console.WriteLine(nameArray[k]);
+            }
+
+            // For each loops
+            foreach (string name in nameArray)
+            {
+                Console.WriteLine(name);
+            }
         }
     }
 }
