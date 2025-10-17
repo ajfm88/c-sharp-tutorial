@@ -4,44 +4,24 @@
     {
         static void Main(string[] args)
         {
-            // While loops
-            int i = 0;
-            while (i < 3)
+            Player codeMonkeyPlayer = new Player("Hideo Kojima");
+            codeMonkeyPlayer.SayHello();
+            Player ironManPlayer = new Player("Tony Stark");
+            ironManPlayer.SayHello();
+        }
+
+        class Player
+        {
+            public string name = "-";
+            public Player(string name)
             {
-                Console.WriteLine("Loop " + i);
-                i++;
+                this.name = name;
+                Console.WriteLine($"Creating player {name}!");
             }
 
-            // Do while loops
-            i = 0;
-            do
+            public void SayHello()
             {
-                Console.WriteLine("Do While Loop " + i);
-                i++;
-            } while (i < 3);
-
-            //  For loops
-            for (int j = 0; j < 3; j++)
-            {
-                Console.WriteLine("For Loop " + j);
-            }
-
-            string[] nameArray = new string[]
-            {
-                "Alejandro Foucault",
-                "Cristiano Ronaldo",
-                "Lionel Messi",
-                "Roberto Carlos"
-            };
-            for (int k = 0; k < nameArray.Length; k++)
-            {
-                Console.WriteLine(nameArray[k]);
-            }
-
-            // For each loops
-            foreach (string name in nameArray)
-            {
-                Console.WriteLine(name);
+                Console.WriteLine($"Hello {name}!");
             }
         }
     }
