@@ -5,21 +5,16 @@
         static void Main(string[] args)
         {
             Player codeMonkeyPlayer = new Player("Hideo Kojima");
-            codeMonkeyPlayer.SayHello();
             Player ironManPlayer = new Player("Tony Stark");
-            ironManPlayer.SayHello();
+            codeMonkeyPlayer.SayHello();
+
+            Console.WriteLine("");
         }
 
         class Player
         {
-            public string name = "-";
-            public Player(string name)
-            {
-                this.name = name;
-                Console.WriteLine($"Creating player {name}!");
-            }
-
-            public void SayHello()
+            public static string name = "-";
+            public static void SayHello()
             {
                 Console.WriteLine($"Hello {name}!");
             }
