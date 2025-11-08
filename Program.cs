@@ -1,31 +1,37 @@
-﻿namespace c_sharp_tutorial
-{
-    public class Program
-    {
-        private static void Main(string[] args)
-        {
-            Player codeMonkeyPlayer = new Player("Hideo Kojima");
-            codeMonkeyPlayer.SayHello();
-            Player ironManPlayer = new Player("Tony Stark");
-            ironManPlayer.SayHello();
+﻿using System.Diagnostics.Contracts;
 
-            Console.WriteLine("");
+namespace c_sharp_tutorial
+{
+    public class MyCodeStyle: MonoBehaviour
+    {
+        // Constants: UpperCase SnakeCase
+        public const int CONSTANT_FIELD = 56;
+
+        // Properties: PascalCase
+        public static MyCodeStyle Instance { get; private set; }
+
+        // Events: PascalCase
+        public event EventHandler OnSomethingHappened;
+
+        // Fields: camelCase
+        private float memberVariable;
+
+        // Function Names: PascalCase
+        private void Awake()
+        {
+            Instance = this;
+
+            DoSomething(10f);
         }
 
-        private class Player
+        // Function Params: camelCase
+        private void DoSomething(float time)
         {
-            private string name = "-";
-
-            public Player (string name)
+            // Do something...
+            memberVariable = time + time.deltaTime;
+            if (memberVariable > 0)
             {
-                this.name = name;
-                Console.WriteLine($"Creating player {name}!");
-
-                SayHello();
-            }
-            public void SayHello()
-            {
-                Console.WriteLine($"Hello {name}!");
+                // Do something else...
             }
         }
     }
