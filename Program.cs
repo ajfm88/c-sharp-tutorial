@@ -1,38 +1,67 @@
-﻿using System.Diagnostics.Contracts;
+﻿using UnityEngine;
 
-namespace c_sharp_tutorial
+namespace CodeMoney.CSharpCourse.L2040_Enums
 {
-    public class MyCodeStyle: MonoBehaviour
+    public class TurnBasedStrategy : MonoBehaviour
     {
-        // Constants: UpperCase SnakeCase
-        public const int CONSTANT_FIELD = 56;
-
-        // Properties: PascalCase
-        public static MyCodeStyle Instance { get; private set; }
-
-        // Events: PascalCase
-        public event EventHandler OnSomethingHappened;
-
-        // Fields: camelCase
-        private float memberVariable;
-
-        // Function Names: PascalCase
-        private void Awake()
+        private enum PlayerAction
         {
-            Instance = this;
-
-            DoSomething(10f);
+            NoEnemy,
+            NoPathToEnemy,
+            MovingTowardEnemy,
+            AttackingEnemy
+        }
+        private enum State
+        {
+            LookingForEnemy,
+            MovingToEnemy,
+            AttackingEnemy,
         }
 
-        // Function Params: camelCase
-        private void DoSomething(float time)
+        private enum TutorialStage
         {
-            // Do something...
-            memberVariable = time + time.deltaTime;
-            if (memberVariable > 0)
+            Stage_1,
+            Stage_2,
+            Stage_3,
+            Stage_4,
+        }
+
+        private State state;
+
+        private void HandleState()
+        {
+            switch (state)
             {
-                // Do something else...
+                case State.MovingToEnemy:
+                // Moving to enemy logic
+                    break;
+                case State.LookingForEnemy;
+                    break;
+                case State.AttackingEnemy;
+                    break;
             }
         }
+
+        private PlayerAction GetNextPlayerAction()
+        {
+            if (!PlayerHasEnemy())
+            {
+                return PlayerAction.NoEnemy;
+            }
+            if (!HasPathToEnemy())
+            {
+                return PlayerAction.NoPathToEnemy;
+            }
+            if (!PlayerWithinAttackDistance())
+            {
+                return PlayerAction.MovingTowardEnemy;
+            } else
+            {
+                return PlayerAction.AttackingEnemy;
+            }
+            {
+                return PlayerAction.NoEnemy;
+            }
+        }        
     }
 }
