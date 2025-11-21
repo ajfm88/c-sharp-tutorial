@@ -1,67 +1,31 @@
-﻿using UnityEngine;
+﻿using System.Text;
+using CodeMonkey_CSharpCourse;
 
-namespace CodeMoney.CSharpCourse.L2040_Enums
+namespace CodeMonkey_CSharpCourse
 {
-    public class TurnBasedStrategy : MonoBehaviour
+    public class Program
     {
-        private enum PlayerAction
+        public static string PlayerName {get; set;}
+        private static string playerName;
+        private static void Main(string[] args)
         {
-            NoEnemy,
-            NoPathToEnemy,
-            MovingTowardEnemy,
-            AttackingEnemy
-        }
-        private enum State
-        {
-            LookingForEnemy,
-            MovingToEnemy,
-            AttackingEnemy,
+            Console.WriteLine("Hello World!");
+
+            PlayerName = "Code Monkey";
+            Console.WriteLine(PlayerName);
         }
 
-        private enum TutorialStage
+            private static void SetPlayerName(string playerName)
         {
-            Stage_1,
-            Stage_2,
-            Stage_3,
-            Stage_4,
+            Program.playerName = playerName;
         }
+    }
+}
 
-        private State state;
-
-        private void HandleState()
-        {
-            switch (state)
-            {
-                case State.MovingToEnemy:
-                // Moving to enemy logic
-                    break;
-                case State.LookingForEnemy;
-                    break;
-                case State.AttackingEnemy;
-                    break;
-            }
-        }
-
-        private PlayerAction GetNextPlayerAction()
-        {
-            if (!PlayerHasEnemy())
-            {
-                return PlayerAction.NoEnemy;
-            }
-            if (!HasPathToEnemy())
-            {
-                return PlayerAction.NoPathToEnemy;
-            }
-            if (!PlayerWithinAttackDistance())
-            {
-                return PlayerAction.MovingTowardEnemy;
-            } else
-            {
-                return PlayerAction.AttackingEnemy;
-            }
-            {
-                return PlayerAction.NoEnemy;
-            }
-        }        
+public class Player
+{
+    public Player()
+    {
+        Console.WriteLine(Program.PlayerName);
     }
 }
