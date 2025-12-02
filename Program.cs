@@ -8,14 +8,24 @@ namespace CodeMonkey_CSharpCourse
         {
             Console.WriteLine("Hello World!");
 
-            for (int i = 0; i < 3; i++)
+            int number = 0;
+            while (number < 5)
             {
-                for (int j = 0; j < 2; j++)
-                {
-                    Console.WriteLine(i + ", " + j);
-                    // break;
-                    // continue;
-                }
+                number++;
+            }
+            Console.WriteLine(number);
+
+            Console.WriteLine(RecursionIncrementer(0, 5, 1));
+        }
+
+        private static int RecursionIncrementer(int number, int numberMax, int incrementAmount)
+        {   
+            if (number < 5)
+            {
+                return RecursionIncrementer(number + incrementAmount, numberMax, incrementAmount);
+            } else
+            {
+                return number;
             }
         }
     }
