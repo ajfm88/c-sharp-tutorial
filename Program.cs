@@ -4,52 +4,25 @@ namespace CodeMonkey_CSharpCourse
 {
     public class Program
     {
-        private enum ResourceType
-        {
-            Stone,
-            Wood,
-            Gold,
-        }
         private static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            // Stack = First In Last Out - Push elements in, and Pop elements out
+            Stack<string> nameStack = new Stack<string>();
 
-            // Creates a new dictionary
-            // Dictionary<ResourceType, int> resourceTypeAmountDictionary = new Dictionary<ResourceType, int>();
+            nameStack.Push("Code Monkey");
+            nameStack.Push("Iron Man");
+            nameStack.Push("Spider-Man");
 
-            // Another way to create key-value pairs and add them to the dictionary
-            Dictionary<ResourceType, int> resourceTypeAmountDictionary = new Dictionary<ResourceType, int>()
-            {
-                {ResourceType.Wood, 10},
-                {ResourceType.Gold, 27},
+            Console.WriteLine(nameStack.Pop());
 
-            };
+            // Queue = First In First Out - Equeue elements in, Dequeue elements out
+            Queue<string> stringQueue = new Queue<string>();
 
-            // Creates key-value pair and adds it to the dictionary
-            resourceTypeAmountDictionary.Add(ResourceType.Stone, 56);
+            stringQueue.Enqueue("Code Monkey");
+            stringQueue.Enqueue("Iron Man");
+            stringQueue.Enqueue("Spider-Man");
 
-            Console.WriteLine(resourceTypeAmountDictionary[ResourceType.Stone]);
-
-            // Update value property in key-value pair
-            resourceTypeAmountDictionary[ResourceType.Stone] = 45;
-
-            // Check if a value exists
-            resourceTypeAmountDictionary.ContainsKey(ResourceType.Wood);
-
-            resourceTypeAmountDictionary[ResourceType.Wood] = 30;
-            // Another way to check if a value exists
-            if (resourceTypeAmountDictionary.TryGetValue(ResourceType.Wood, out int woodAmount))
-            {
-                Console.WriteLine(woodAmount);
-            };
-
-            // remove a poperty from a dictionary
-            resourceTypeAmountDictionary.Remove(ResourceType.Wood);
-
-            foreach (ResourceType resourceType in resourceTypeAmountDictionary.Keys)
-            {
-                Console.WriteLine(resourceType + ": " + resourceTypeAmountDictionary[resourceType]);
-            }
+            Console.WriteLine(stringQueue.Dequeue());
         }
     }
 }
