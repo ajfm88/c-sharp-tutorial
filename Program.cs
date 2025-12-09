@@ -6,23 +6,14 @@ namespace CodeMonkey_CSharpCourse
     {
         private static void Main(string[] args)
         {
-            // Stack = First In Last Out - Push elements in, and Pop elements out
-            Stack<string> nameStack = new Stack<string>();
+            Console.WriteLine("Hello World!");
 
-            nameStack.Push("Code Monkey");
-            nameStack.Push("Iron Man");
-            nameStack.Push("Spider-Man");
-
-            Console.WriteLine(nameStack.Pop());
-
-            // Queue = First In First Out - Equeue elements in, Dequeue elements out
-            Queue<string> stringQueue = new Queue<string>();
-
-            stringQueue.Enqueue("Code Monkey");
-            stringQueue.Enqueue("Iron Man");
-            stringQueue.Enqueue("Spider-Man");
-
-            Console.WriteLine(stringQueue.Dequeue());
+            PrintPlayerName("Alejandro Foucault", "Lionel Messi");
+        }
+        // params is the keyword that we use when we want to add any number of parameters into a function.
+        private static void PrintPlayerName(params string[] playerNameArray)
+        {
+            Console.WriteLine(playerNameArray.Length);
         }
     }
 }
