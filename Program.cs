@@ -1,33 +1,33 @@
 ﻿using System.Numerics;
+using System.Text;
 
 namespace CodeMonkey_CSharpCourse
 {
     public class Program
     {
-        private const int DEFAULT_HEALTH_AMOUNT = 100;
-        private enum UnitType
-        {
-            Melee,
-            Ranged,
-            Wizard
-        }
-
         private static void Main(string[] args)
         {
             Console.WriteLine("Hello World!");
 
-            SpawnUnit(new Vector3(0, 0, 0), UnitType.Melee, Quaternion.Identity, 56);
-            SpawnUnit(new Vector3(10, 5, 0), UnitType.Ranged, Quaternion.Identity);
-            SpawnUnit(healthAmount: 56);
+            // Reference types just store a reference to the value
+            MyClass myClass = new MyClass();
+            myClass.a = 7;
+            MyClass mySecondClass = myClass;
+            mySecondClass.a = 5;
+
+            Console.WriteLine(myClass.a);
+
+            // Value types hold the actual data
+            int a = 7;
+            int b = a;
+            b = 5;
+
+            Console.WriteLine(a);
         }
-        private static void SpawnUnit(
-            Vector3 spawnPosition = default,
-            UnitType unitType = UnitType.Melee,
-            Quaternion spawnRotation = default,
-            int healthAmount = DEFAULT_HEALTH_AMOUNT
-            )
+
+        private class MyClass
         {
-            Console.WriteLine("Spawning unit of type " + unitType + " with health: " + healthAmount + " at " + spawnPosition + ", ");
+            public int a;
         }
     }
 }
